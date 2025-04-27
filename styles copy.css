@@ -1,0 +1,244 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    color: #fff;
+}
+
+.img-src {
+    position: relative;
+    display: flex;
+    width: 50px;
+    height: 70px;
+    bottom: 5px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.header-list_link {
+    color: #fff;
+}
+
+.container {
+    background: #000;
+    margin-bottom: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.header-list {
+    display: flex;
+    gap: 35px;
+    list-style-type: none;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.header-list_li:hover {
+    text-decoration: underline;
+    color: blue;
+    font-size: 25px;
+}
+
+.news {
+    max-width: 420px;
+    margin: 0 auto 20px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+.news-title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.news-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+.news-description {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.footer {
+    background-color: #000;
+    padding: 50px 0 32px;
+}
+
+.footer-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.footer-menu_link:hover {
+    text-decoration: underline;
+}
+
+.foter-menu_icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        font-size: 20px;
+    }
+
+    .news {
+        max-width: 90%;
+    }
+
+    .footer-menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .header-list {
+        font-size: 18px;
+    }
+
+    .news {
+        padding: 15px;
+    }
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 10;
+    }
+
+    .nav-menu {
+        position: relative;
+    }
+
+    .header-list {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease, padding 0.3s ease;
+        background: #000;
+    }
+
+    .header-list.active {
+        max-height: 300px; /* Можно менять высоту по желанию */
+        padding: 10px 0;
+    }
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    padding: 0 15px;
+}
+
+.news {
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.news-title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.news-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+.news-description {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Адаптив */
+@media (max-width: 1024px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+}
